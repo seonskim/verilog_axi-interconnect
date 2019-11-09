@@ -1,0 +1,267 @@
+*** Message Type: info ***
+When: Mon Nov 19 10:01:06 KST 2018
+SimVision started.
+Version: TOOL:  simvision       15.20-p001
+User: skim
+Host: soc2
+Platform: Linux/x86_64/2.6.32-754.3.5.el6.x86_64
+Started: Mon Nov 19 10:01:06 KST 2018
+Command: /home/tool/cadence/installs/INCISIV111/tools.lnx86/simvision/bin/simvision.exe -connect dc:soc2:59530 -nocopyright
+Work Directory: /home/skim/Verilog/SSD/AXI_18_10_30/simulation
+ 
+*** Message Type: info ***
+When: Mon Nov 19 10:01:07 KST 2018
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Mon Nov 19 10:01:09 KST 2018
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Mon Nov 19 10:01:11 KST 2018
+Connect to Simulator
+      Design: worklib.tb:v
+   Languages: verilog
+   Simulator: NC-Sim
+     Version: TOOL:       ncsim   15.20-p001
+        User: skim
+        Host: soc2
+Time Started: Mon Nov 19 10:01:05 KST 2018
+  Process ID: 16386
+   Directory: /home/skim/Verilog/SSD/AXI_18_10_30/simulation
+     Command: ncverilog -f sim.f +vcd +gui +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns
+
+ 
+*** Message Type: info ***
+When: Mon Nov 19 10:01:11 KST 2018
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Mon Nov 19 10:01:24 KST 2018
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: info ***
+When: Mon Nov 19 10:01:31 KST 2018
+Create schematic window: "Schematic Tracer 1"
+ 
+*** Message Type: info ***
+When: Mon Nov 19 10:22:27 KST 2018
+Create uvmseqviewer window: "UVM Sequence Viewer 1"
+ 
+*** Message Type: error ***
+When: Mon Nov 19 10:22:33 KST 2018
+bad option "close": should be one of...
+  .uVMSeqViewer0 activate
+  .uVMSeqViewer0 addDacPointers ptrs
+  .uVMSeqViewer0 addDesignFileSearchIfNeeded menu
+  .uVMSeqViewer0 addSelected
+  .uVMSeqViewer0 addindicator tag ?weight?
+  .uVMSeqViewer0 addtoolbar ?tag?
+  .uVMSeqViewer0 busy op
+  .uVMSeqViewer0 cget option
+  .uVMSeqViewer0 closeWindow
+  .uVMSeqViewer0 component ?name? ?arg arg ...?
+  .uVMSeqViewer0 config ?option? ?arg arg ...?
+  .uVMSeqViewer0 configure ?option? ?arg arg ...?
+  .uVMSeqViewer0 connectSim
+  .uVMSeqViewer0 control op ?arg arg ...?
+  .uVMSeqViewer0 createWindowsToolbar frame ?arg arg ...?
+  .uVMSeqViewer0 deletetoolbar tagOrIndex
+  .uVMSeqViewer0 displayToolbar ?arg arg ...?
+  .uVMSeqViewer0 doBreak
+  .uVMSeqViewer0 doGoToParentSequence
+  .uVMSeqViewer0 doGoToRootSequence
+  .uVMSeqViewer0 doGoToSequence seqH
+  .uVMSeqViewer0 doSendToDesignBrowser
+  .uVMSeqViewer0 doSendToSourceBrowser
+  .uVMSeqViewer0 doSendToWatchWindow
+  .uVMSeqViewer0 doSendToWaveform
+  .uVMSeqViewer0 doSidebarTrace what objects
+  .uVMSeqViewer0 doSourceScript ?filename?
+  .uVMSeqViewer0 docking option ?arg arg ...?
+  .uVMSeqViewer0 dvtSetMenu operation type
+  .uVMSeqViewer0 dvtrecord name
+  .uVMSeqViewer0 dvttestclear ?arg arg ...?
+  .uVMSeqViewer0 dvttestrecord ?arg arg ...?
+  .uVMSeqViewer0 enablePrintMenuItem
+  .uVMSeqViewer0 expansion ?arg arg ...?
+  .uVMSeqViewer0 getAutoprobeSignals
+  .uVMSeqViewer0 getCmdLang
+  .uVMSeqViewer0 getCmdlangCmd
+  .uVMSeqViewer0 getToolbarArea
+  .uVMSeqViewer0 getToolbarsForLayout
+  .uVMSeqViewer0 getTornoffSidebars
+  .uVMSeqViewer0 getVisibleTarget frame
+  .uVMSeqViewer0 getVisibleTargetType
+  .uVMSeqViewer0 getWindowType ?from?
+  .uVMSeqViewer0 getbutton name
+  .uVMSeqViewer0 getframe ?which?
+  .uVMSeqViewer0 getindicator tag
+  .uVMSeqViewer0 getstatusbar
+  .uVMSeqViewer0 gettoolbar tagOrIndex
+  .uVMSeqViewer0 hasmenu tag
+  .uVMSeqViewer0 insertindicator pos tag ?weight?
+  .uVMSeqViewer0 invokebutton name
+  .uVMSeqViewer0 invokemenu path ?arg arg ...?
+  .uVMSeqViewer0 isRaised ?state?
+  .uVMSeqViewer0 isUVMSeqViewerMenuAllowed dacH
+  .uVMSeqViewer0 isa className
+  .uVMSeqViewer0 istarget
+  .uVMSeqViewer0 listtoolbars
+  .uVMSeqViewer0 mdump ?arg arg ...?
+  .uVMSeqViewer0 menu_entryconfigure tagOrId ?arg arg ...?
+  .uVMSeqViewer0 moveBy dx dy
+  .uVMSeqViewer0 notify op ?arg arg ...?
+  .uVMSeqViewer0 openDB
+  .uVMSeqViewer0 openSource
+  .uVMSeqViewer0 post menuid ?x? ?y?
+  .uVMSeqViewer0 progress ?arg arg ...?
+  .uVMSeqViewer0 refresh
+  .uVMSeqViewer0 renamewindow nname
+  .uVMSeqViewer0 saveToCommandScript fid ?arg arg ...?
+  .uVMSeqViewer0 sendToDataBrowser winType dacH
+  .uVMSeqViewer0 sendToDesignFileSearch ?searchString?
+  .uVMSeqViewer0 sendToDesignFileSearchSelected ?arg arg ...?
+  .uVMSeqViewer0 sendToWindow type name
+  .uVMSeqViewer0 sendto type name
+  .uVMSeqViewer0 sendtoCustomize source op ?arg arg ...?
+  .uVMSeqViewer0 setSlaveMenus present
+  .uVMSeqViewer0 setToolbarsFromLayout dump
+  .uVMSeqViewer0 setWindowIcon icon
+  .uVMSeqViewer0 settarget boolean
+  .uVMSeqViewer0 settime time
+  .uVMSeqViewer0 showindicator tag boolean
+  .uVMSeqViewer0 showstatusbar boolean
+  .uVMSeqViewer0 showtoolbar tagOrIndex ?boolean?
+  .uVMSeqViewer0 sidebar option ?arg arg ...?
+  .uVMSeqViewer0 statenotify op caller ?arg arg ...?
+  .uVMSeqViewer0 statusMessage mesg ?time?
+  .uVMSeqViewer0 timeControlStatus op ?dir?
+  .uVMSeqViewer0 timetoolbar option ?arg arg ...?
+  .uVMSeqViewer0 udButton op name ?arg arg ...?
+  .uVMSeqViewer0 udMenu op path ?arg arg ...?
+  .uVMSeqViewer0 units ?units?
+  .uVMSeqViewer0 unpost menuid
+  .uVMSeqViewer0 updateAutoSaveInfo ?notWritable?
+  .uVMSeqViewer0 userToolbar op ?arg arg ...?
+  .uVMSeqViewer0 viewer option ?arg arg ...?
+  .uVMSeqViewer0 withdraw
+bad option "close": should be one of...
+  .uVMSeqViewer0 activate
+  .uVMSeqViewer0 addDacPointers ptrs
+  .uVMSeqViewer0 addDesignFileSearchIfNeeded menu
+  .uVMSeqViewer0 addSelected
+  .uVMSeqViewer0 addindicator tag ?weight?
+  .uVMSeqViewer0 addtoolbar ?tag?
+  .uVMSeqViewer0 busy op
+  .uVMSeqViewer0 cget option
+  .uVMSeqViewer0 closeWindow
+  .uVMSeqViewer0 component ?name? ?arg arg ...?
+  .uVMSeqViewer0 config ?option? ?arg arg ...?
+  .uVMSeqViewer0 configure ?option? ?arg arg ...?
+  .uVMSeqViewer0 connectSim
+  .uVMSeqViewer0 control op ?arg arg ...?
+  .uVMSeqViewer0 createWindowsToolbar frame ?arg arg ...?
+  .uVMSeqViewer0 deletetoolbar tagOrIndex
+  .uVMSeqViewer0 displayToolbar ?arg arg ...?
+  .uVMSeqViewer0 doBreak
+  .uVMSeqViewer0 doGoToParentSequence
+  .uVMSeqViewer0 doGoToRootSequence
+  .uVMSeqViewer0 doGoToSequence seqH
+  .uVMSeqViewer0 doSendToDesignBrowser
+  .uVMSeqViewer0 doSendToSourceBrowser
+  .uVMSeqViewer0 doSendToWatchWindow
+  .uVMSeqViewer0 doSendToWaveform
+  .uVMSeqViewer0 doSidebarTrace what objects
+  .uVMSeqViewer0 doSourceScript ?filename?
+  .uVMSeqViewer0 docking option ?arg arg ...?
+  .uVMSeqViewer0 dvtSetMenu operation type
+  .uVMSeqViewer0 dvtrecord name
+  .uVMSeqViewer0 dvttestclear ?arg arg ...?
+  .uVMSeqViewer0 dvttestrecord ?arg arg ...?
+  .uVMSeqViewer0 enablePrintMenuItem
+  .uVMSeqViewer0 expansion ?arg arg ...?
+  .uVMSeqViewer0 getAutoprobeSignals
+  .uVMSeqViewer0 getCmdLang
+  .uVMSeqViewer0 getCmdlangCmd
+  .uVMSeqViewer0 getToolbarArea
+  .uVMSeqViewer0 getToolbarsForLayout
+  .uVMSeqViewer0 getTornoffSidebars
+  .uVMSeqViewer0 getVisibleTarget frame
+  .uVMSeqViewer0 getVisibleTargetType
+  .uVMSeqViewer0 getWindowType ?from?
+  .uVMSeqViewer0 getbutton name
+  .uVMSeqViewer0 getframe ?which?
+  .uVMSeqViewer0 getindicator tag
+  .uVMSeqViewer0 getstatusbar
+  .uVMSeqViewer0 gettoolbar tagOrIndex
+  .uVMSeqViewer0 hasmenu tag
+  .uVMSeqViewer0 insertindicator pos tag ?weight?
+  .uVMSeqViewer0 invokebutton name
+  .uVMSeqViewer0 invokemenu path ?arg arg ...?
+  .uVMSeqViewer0 isRaised ?state?
+  .uVMSeqViewer0 isUVMSeqViewerMenuAllowed dacH
+  .uVMSeqViewer0 isa className
+  .uVMSeqViewer0 istarget
+  .uVMSeqViewer0 listtoolbars
+  .uVMSeqViewer0 mdump ?arg arg ...?
+  .uVMSeqViewer0 menu_entryconfigure tagOrId ?arg arg ...?
+  .uVMSeqViewer0 moveBy dx dy
+  .uVMSeqViewer0 notify op ?arg arg ...?
+  .uVMSeqViewer0 openDB
+  .uVMSeqViewer0 openSource
+  .uVMSeqViewer0 post menuid ?x? ?y?
+  .uVMSeqViewer0 progress ?arg arg ...?
+  .uVMSeqViewer0 refresh
+  .uVMSeqViewer0 renamewindow nname
+  .uVMSeqViewer0 saveToCommandScript fid ?arg arg ...?
+  .uVMSeqViewer0 sendToDataBrowser winType dacH
+  .uVMSeqViewer0 sendToDesignFileSearch ?searchString?
+  .uVMSeqViewer0 sendToDesignFileSearchSelected ?arg arg ...?
+  .uVMSeqViewer0 sendToWindow type name
+  .uVMSeqViewer0 sendto type name
+  .uVMSeqViewer0 sendtoCustomize source op ?arg arg ...?
+  .uVMSeqViewer0 setSlaveMenus present
+  .uVMSeqViewer0 setToolbarsFromLayout dump
+  .uVMSeqViewer0 setWindowIcon icon
+  .uVMSeqViewer0 settarget boolean
+  .uVMSeqViewer0 settime time
+  .uVMSeqViewer0 showindicator tag boolean
+  .uVMSeqViewer0 showstatusbar boolean
+  .uVMSeqViewer0 showtoolbar tagOrIndex ?boolean?
+  .uVMSeqViewer0 sidebar option ?arg arg ...?
+  .uVMSeqViewer0 statenotify op caller ?arg arg ...?
+  .uVMSeqViewer0 statusMessage mesg ?time?
+  .uVMSeqViewer0 timeControlStatus op ?dir?
+  .uVMSeqViewer0 timetoolbar option ?arg arg ...?
+  .uVMSeqViewer0 udButton op name ?arg arg ...?
+  .uVMSeqViewer0 udMenu op path ?arg arg ...?
+  .uVMSeqViewer0 units ?units?
+  .uVMSeqViewer0 unpost menuid
+  .uVMSeqViewer0 updateAutoSaveInfo ?notWritable?
+  .uVMSeqViewer0 userToolbar op ?arg arg ...?
+  .uVMSeqViewer0 viewer option ?arg arg ...?
+  .uVMSeqViewer0 withdraw
+    while executing
+"::.uVMSeqViewer0 close"
+    ("after" script)
+ 
+*** Message Type: info ***
+When: Mon Nov 19 14:26:17 KST 2018
+Exit NC-Sim: user
+      Design: worklib.tb:v
+   Languages: verilog
+   Simulator: NC-Sim
+     Version: TOOL:       ncsim   15.20-p001
+        User: skim
+        Host: soc2
+Time Started: Mon Nov 19 10:01:05 KST 2018
+  Process ID: 16386
+   Directory: /home/skim/Verilog/SSD/AXI_18_10_30/simulation
+     Command: ncverilog -f sim.f +vcd +gui +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns
+
+ 
+*** Message Type: info ***
+When: Mon Nov 19 14:26:20 KST 2018
+SimVision Exit.
+ 

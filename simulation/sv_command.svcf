@@ -1,0 +1,1060 @@
+# SimVision Command Script (Mon Nov 26 03:02:35 PM KST 2018)
+#
+# Version 15.20.p001
+#
+# You can restore this configuration with:
+#
+#     simvision -input sv_command.svcf
+#
+
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set toolbar-Standard-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set whats-new-dont-show-at-startup 1
+preferences set toolbar-WaveZoom-WaveWindow {
+  usual
+  position -row 1 -pos 3
+}
+preferences set toolbar-CursorControl-WaveWindow {
+  usual
+  position -row 1 -pos 2
+}
+preferences set toolbar-Windows-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-SimControl-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-Standard-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-TimeSearch-WatchWindow {
+  usual
+  shown 0
+}
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 2318x1158+0+27}] != ""} {
+    window geometry "Waveform 1" 2318x1158+0+27
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 80
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst  {
+	{[format {tb.aclk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.areset}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_0.addr[9:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_0.din[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_0.dout[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_0.we}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_1.addr[9:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_1.din[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_1.dout[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_1.we}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_2.addr[9:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_2.din[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_2.dout[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_2.we}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_3.addr[9:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_3.din[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_3.dout[31:0]}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.sram_1024x32_3.we}]}
+	} ]]
+waveform format $id -color #ffff00 -namecolor #ffff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_m0[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_m1[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_m2[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_m3[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_s0[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_s1[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_s2[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awaddr_s3[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_m0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_m1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_m2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_m3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_s0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_s1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_s2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awid_s3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_m0[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_m1[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_m2[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_m3[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_s0[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_s1[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_s2[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awburst_s3[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_m0[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_m1[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_m2[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_m3[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_s0[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_s1[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_s2[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awsize_s3[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_m0[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_m1[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_m2[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_m3[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_s0[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_s1[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_s2[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awlen_s3[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_m0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_m1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_m2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_m3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_s0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_s1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_s2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awvalid_s3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_m0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_m1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_m2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_m3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_s0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_s1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_s2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.awready_s3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_m0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_m1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_m2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_m3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_s0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_s1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_s2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wid_s3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_m0[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_m1[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_m2[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_m3[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_s0[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_s1[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_s2[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wdata_s3[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_m0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_m1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_m2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_m3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_s0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_s1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_s2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wvalid_s3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_m0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_m1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_m2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_m3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_s0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_s1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_s2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wready_s3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_m0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_m1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_m2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_m3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_s0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_s1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_s2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.wlast_s3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_m0[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_m1[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_m2[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_m3[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_s0[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_s1[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_s2[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.araddr_s3[31:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_m0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_m1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_m2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_m3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_s0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_s1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_s2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arid_s3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_m0[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_m1[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_m2[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_m3[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_s0[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_s1[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_s2[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arburst_s3[1:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_m0[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_m1[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_m2[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_m3[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_s0[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_s1[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_s2[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arsize_s3[2:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_m0[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_m1[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_m2[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_m3[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_s0[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_s1[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_s2[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arlen_s3[3:0]}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_m0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_m1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_m2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_m3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_s0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_s1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_s2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arvalid_s3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_m0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_m1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_m2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_m3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_s0}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_s1}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_s2}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.arready_s3}]}
+	} ]]
+waveform format $id -color #00ffff -namecolor #00ffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_m0[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_m1[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_m2[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_m3[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_s0[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_s1[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_s2[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rid_s3[3:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_m0[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_m1[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_m2[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_m3[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_s0[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_s1[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_s2[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rdata_s3[31:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_m0[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_m1[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_m2[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_m3[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_s0[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_s1[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_s2[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rresp_s3[1:0]}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_m0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_m1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_m2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_m3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_s0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_s1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_s2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rlast_s3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_m0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_m1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_m2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_m3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_s0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_s1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_s2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rvalid_s3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_m0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_m1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_m2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_m3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_s0}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_s1}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_s2}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.rready_s3}]}
+	} ]]
+waveform format $id -color #00ff00 -namecolor #00ff00
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_m0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_m1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_m2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_m3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_s0[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_s1[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_s2[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bid_s3[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_s0[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_s1[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_s2[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_s3[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_m0[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_m1[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_m2[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bresp_m3[1:0]}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_s0}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_s1}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_s2}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_s3}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_m0}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_m1}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_m2}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bvalid_m3}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_s0}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_s1}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_s2}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_s3}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_m0}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_m1}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_m2}]}
+	} ]]
+waveform format $id -color #ffffff
+set id [waveform add -signals [subst  {
+	{[format {tb.interconnect.bready_m3}]}
+	} ]]
+waveform format $id -color #ffffff
+
+waveform xview limits 0 384ns
+waveform grid -state x -start 0 -delta 10ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Layout selection
+#
+

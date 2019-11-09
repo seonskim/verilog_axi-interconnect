@@ -1,0 +1,41 @@
+s1(09Nov2018:19:47:04):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s2(19Nov2018:10:01:05):  ncverilog -f sim.f +vcd +gui +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s3(21Nov2018:15:39:57):  ncverilog -f sim.f +vcd +gui +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s4(22Nov2018:11:05:44):  ncverilog -f sim.f +vcd +gui +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s5(22Nov2018:12:20:55):  ncverilog -f sim.f +vcd +gui +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s6(26Nov2018:14:36:50):  ncverilog -f sim.f +vcd +gui +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s7(26Nov2018:14:40:31):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s8(26Nov2018:14:43:34):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s9(26Nov2018:15:02:09):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s10(28Nov2018:17:50:27):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s11(28Nov2018:17:56:42):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s12(28Nov2018:17:58:44):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s13(28Nov2018:17:59:15):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s14(29Nov2018:11:58:04):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s15(29Nov2018:11:58:13):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s16(29Nov2018:11:58:26):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s17(29Nov2018:11:58:35):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s18(29Nov2018:12:01:56):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s19(29Nov2018:12:02:17):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s20(29Nov2018:12:02:29):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s21(29Nov2018:12:02:35):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s22(29Nov2018:12:02:54):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s23(29Nov2018:12:03:17):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s24(29Nov2018:12:06:10):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s25(29Nov2018:14:51:52):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s26(29Nov2018:14:54:32):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s27(29Nov2018:14:56:24):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s28(29Nov2018:15:03:10):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s29(29Nov2018:15:05:44):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s30(29Nov2018:15:06:10):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s31(29Nov2018:15:09:11):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s32(29Nov2018:15:09:29):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s33(29Nov2018:15:11:23):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s34(29Nov2018:15:13:18):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s35(29Nov2018:15:13:51):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s36(29Nov2018:15:15:35):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s37(29Nov2018:15:18:26):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s38(29Nov2018:15:19:00):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s39(29Nov2018:15:29:00):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s40(29Nov2018:15:32:41):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns 
+s41(29Nov2018:16:49:07):  ncverilog -f sim.f +vcd +define+functional_mode+RTL_SIM +access+r +nctimescale+1ns/1ns +GUI 

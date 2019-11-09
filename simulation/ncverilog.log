@@ -1,0 +1,75 @@
+ncverilog: 15.20-p001: (c) Copyright 1995-2016 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-p001: Started on Nov 29, 2018 at 16:49:07 KST
+ncverilog
+	-f sim.f
+		../testbench/tb_topmodule.v
+		../testbench/master.v
+		../testbench/sram_controller.v
+		../testbench/sram_1024x32.v
+		../interconnect/interconnect.v
+		../interconnect/addr_wdata_mux_m4.v
+		../interconnect/ar_mux_m4.v
+		../interconnect/rdata_mux_m4.v
+		../interconnect/wr_mux_s4.v
+		../router_slave/router_slave_1to2.v
+		../router_slave/addr_wdata_demux_1to2.v
+		../router_slave/ar_demux_1to2.v
+		../router_slave/rdata_mux_2to1.v
+		../router_slave/wr_mux_2to1.v
+		../router_master/router_master_2to1.v
+		../router_master/addr_wdata_mux_2to1.v
+		../router_master/wr_demux_1to2.v
+		../router_master/ar_mux_2to1.v
+		../router_master/rdata_demux_1to2.v
+	+vcd
+	+define+functional_mode+RTL_SIM
+	+access+r
+	+nctimescale+1ns/1ns
+	+GUI
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /home/tools/cadence/installs/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> scope -set tb.dump_file
+ncsim> run
+Simulation complete via $finish(1) at time 3000110 NS + 0
+../testbench/tb_topmodule.v:2258          $finish;  
+ncsim> probe -create -shm tb.dump_file.dump
+Created default SHM database ncsim.shm
+Created probe 1
+ncsim> scope -set tb.dump_file
+ncsim> stop -create -subprogram tb.dump_file
+ncsim: *E,SRBPNE: Subprogram breakpoints not enabled. Compile the source with -LINEDEBUG option.
+ncsim> run
+ncsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+ncsim> reset
+Loaded snapshot worklib.tb:v
+ncsim> scope -set tb.master_m0
+ncsim> scope -set tb
+ncsim> scope -set tb.master_m1
+ncsim> scope -set tb.router_m0.ar_mux
+ncsim> scope -set tb.router_m0.addr_wdata_mux
+ncsim> scope -set tb.router_m0.rdata_demux
+ncsim> scope -set tb.router_m0.wr_demux
+ncsim> run
+ncsim: *W,SHMOPEND: $shm_open already done.
+            File: ../testbench/tb_topmodule.v, line = 2269, pos = 11
+           Scope: tb.tb_start
+            Time: 0 FS + 0
+
+Simulation complete via $finish(1) at time 3000110 NS + 0
+../testbench/tb_topmodule.v:2258          $finish;  
+ncsim> run
+ncsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+ncsim> reset
+Loaded snapshot worklib.tb:v
+ncsim> run
+ncsim: *W,SHMOPEND: $shm_open already done.
+            File: ../testbench/tb_topmodule.v, line = 2269, pos = 11
+           Scope: tb.tb_start
+            Time: 0 FS + 0
+
+Simulation complete via $finish(1) at time 3000110 NS + 0
+../testbench/tb_topmodule.v:2258          $finish;  
+ncsim> TOOL:	ncverilog	15.20-p001: Exiting on Nov 29, 2018 at 17:44:22 KST  (total: 00:55:15)
